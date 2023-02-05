@@ -1,0 +1,21 @@
+# 结构体
+
+创建:
+```
+type struct1 struct {
+    field1 type1
+    field2 type2
+    …
+}
+ms := new(struct1)
+```
+
+初始化:`ms := &struct1{10,15.5,"Chris"}`
+
+当结构体的命名以大写字母开头时,该结构体在包外可见,通常情况下,为每个结构体定义一个构建函数,并推荐使用构建函数初始化结构体
+```
+ms := Newstruct1{10, 15.5, "Chris"}
+func Newstruct1(n int, f float32, name string) *struct1 {
+    return &struct1{n, f, name} 
+}
+```
